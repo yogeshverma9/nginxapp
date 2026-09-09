@@ -1,0 +1,50 @@
+{
+  "root": "/workspace",
+  "fileCount": 7,
+  "files": {
+    "nginx-app/Chart.yaml": {
+      "ocpScore": 0,
+      "markers": [],
+      "kind": null,
+      "apiVersion": "v2"
+    },
+    "nginx-app/dev_values.yaml": {
+      "ocpScore": 0,
+      "markers": [],
+      "kind": null,
+      "apiVersion": null
+    },
+    "nginx-app/templates/deployment.yaml": {
+      "ocpScore": 0,
+      "markers": [],
+      "kind": null,
+      "apiVersion": null
+    },
+    "nginx-app/templates/hpa.yaml": {
+      "ocpScore": 0,
+      "markers": [],
+      "kind": null,
+      "apiVersion": null
+    },
+    "nginx-app/templates/pvc.yaml": {
+      "ocpScore": 0,
+      "markers": [],
+      "kind": null,
+      "apiVersion": null
+    },
+    "nginx-app/templates/route.yaml": {
+      "ocpScore": 1,
+      "markers": [
+        "OpenShift Route API"
+      ],
+      "kind": null,
+      "apiVersion": null
+    },
+    "nginx-app/templates/service.yaml": {
+      "ocpScore": 0,
+      "markers": [],
+      "kind": "Service",
+      "apiVersion": "v1"
+    }
+  }
+}
