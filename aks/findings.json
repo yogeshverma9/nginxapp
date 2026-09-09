@@ -1,0 +1,122 @@
+[
+  {
+    "rule_id": "M1",
+    "title": "Template references undefined value .Values.deployment.namespace",
+    "severity": "BLOCK",
+    "path": "nginx-app/templates/ingress.yaml",
+    "detail": "No values file defines 'deployment.namespace'; it renders empty. Checked: ['dev_values.yaml']",
+    "remediation": "Define deployment.namespace in every values file, or correct the template key name.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "M1",
+    "title": "Template references undefined value .Values.route.tlsSecretName",
+    "severity": "BLOCK",
+    "path": "nginx-app/templates/ingress.yaml",
+    "detail": "No values file defines 'route.tlsSecretName'; it renders empty. Checked: ['dev_values.yaml']",
+    "remediation": "Define route.tlsSecretName in every values file, or correct the template key name.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "M1",
+    "title": "Template references undefined value .Values.service.label",
+    "severity": "BLOCK",
+    "path": "nginx-app/templates/ingress.yaml",
+    "detail": "No values file defines 'service.label'; it renders empty. Checked: ['dev_values.yaml']",
+    "remediation": "Define service.label in every values file, or correct the template key name.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "M1",
+    "title": "Template references undefined value .Values.service.portValue",
+    "severity": "BLOCK",
+    "path": "nginx-app/templates/ingress.yaml",
+    "detail": "No values file defines 'service.portValue'; it renders empty. Checked: ['dev_values.yaml']",
+    "remediation": "Define service.portValue in every values file, or correct the template key name.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "M7",
+    "title": "Container 'container' has no readinessProbe",
+    "severity": "HIGH",
+    "path": "nginx-app/templates/hpa.yaml",
+    "detail": "helm upgrade --atomic judges rollout success by readiness. Without a probe, --atomic reports success on a broken deploy.",
+    "remediation": "Add readinessProbe and livenessProbe on the container port.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "M7",
+    "title": "Container 'container' has no livenessProbe",
+    "severity": "HIGH",
+    "path": "nginx-app/templates/hpa.yaml",
+    "detail": "No livenessProbe defined.",
+    "remediation": "Add a livenessProbe.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "T1",
+    "title": "Route TLS termination requires a secretName",
+    "severity": "NEEDS_INPUT",
+    "path": "nginx-app/templates/route.yaml",
+    "detail": "The source Route specified TLS. The emitted Ingress references .Values.route.tlsSecretName, which is not yet defined.",
+    "remediation": "Provision/import the TLS secret on AKS and set route.tlsSecretName in the environment's values file.",
+    "line": null,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "D0",
+    "title": "OpenShift coupling: OpenShift Route API",
+    "severity": "INFO",
+    "path": "nginx-app/templates/route.yaml",
+    "detail": "Found marker 'route.openshift.io'",
+    "remediation": "Handled by the transform stage.",
+    "line": 2,
+    "auto_fixed": false
+  },
+  {
+    "rule_id": "L1",
+    "title": "LLM reviewed and updated this file",
+    "severity": "INFO",
+    "path": "nginx-app/templates/hpa.yaml",
+    "detail": "Generated fresh by the model this run. Set FREEZE_OUTPUT=true in migration.env once you're happy with the result to lock it in.",
+    "remediation": "",
+    "line": null,
+    "auto_fixed": true
+  },
+  {
+    "rule_id": "L1",
+    "title": "LLM reviewed and updated this file",
+    "severity": "INFO",
+    "path": "nginx-app/templates/ingress.yaml",
+    "detail": "Generated fresh by the model this run. Set FREEZE_OUTPUT=true in migration.env once you're happy with the result to lock it in.",
+    "remediation": "",
+    "line": null,
+    "auto_fixed": true
+  },
+  {
+    "rule_id": "T1",
+    "title": "Route converted to Ingress",
+    "severity": "INFO",
+    "path": "nginx-app/templates/route.yaml",
+    "detail": "Emitted nginx-app/templates/ingress.yaml with ingressClassName=haproxy",
+    "remediation": "",
+    "line": null,
+    "auto_fixed": true
+  },
+  {
+    "rule_id": "V9",
+    "title": "Server-side validation skipped (offline mode)",
+    "severity": "INFO",
+    "path": ".",
+    "detail": "helm --dry-run=server and kubectl auth can-i require cluster access.",
+    "remediation": "Re-run with --mode connected once credentials are available.",
+    "line": null,
+    "auto_fixed": false
+  }
+]
