@@ -1,6 +1,0 @@
-apiVersion: v2
-name: nginx-ocp
-description: OpenShift-compatible NGINX Helm chart with Service, Route, Deployment, HPA, and PVC
-type: application
-version: 0.1.0
-appVersion: "1.27"
