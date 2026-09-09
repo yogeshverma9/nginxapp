@@ -1,0 +1,7 @@
+{{- if .Values.route.enabled }}
+OpenShift route:
+  oc get route {{ include "nginx-ocp.fullname" . }} -o jsonpath='{.spec.host}'
+{{- else }}
+Service:
+  {{ include "nginx-ocp.fullname" . }}:{{ .Values.service.port }}
+{{- end }}
