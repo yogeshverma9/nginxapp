@@ -1,9 +1,0 @@
-{
-  "decision": "NEEDS_REVIEW",
-  "rationale": "No blocking defects, but 1 finding(s) require human judgement and 1 configuration value(s) are still TBC. A pull request will be opened for review; it will not auto-merge.",
-  "counts": {
-    "MEDIUM": 1,
-    "INFO": 3,
-    "NEEDS_INPUT": 1
-  }
-}
